@@ -1,0 +1,103 @@
+\documentclass[dvipdfmx,12pt]{beamer}% dvipdfmxしたい
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
+\usepackage{pxjahyper}% 日本語で'しおり'したい
+\usepackage{minijs}% min10ヤダ
+\usepackage{amsmath,amssymb,amsthm}% 数式とか
+\usepackage{graphicx}% 画像とか
+\usepackage{tikz}% 図とか
+\usepackage{ascmac}% 枠とか
+\usepackage{url}% URLとか
+\usepackage{here}% 画像とか
+\usepackage{hyperref}% ハイパーリンクとか
+\renewcommand{\kanjifamilydefault}{\gtdefault}% 既定をゴシック体に
+
+% あとは欧文の場合と同じ
+\usetheme{Copenhagen}% https://hartwork.org/beamer-theme-matrix/
+\usecolortheme{default}% https://hartwork.org/beamer-theme-matrix/
+
+\AtBeginSection[]{
+    \frame{\tableofcontents[currentsection, hideallsubsections]} %目次スライド
+}
+
+
+\title{今週のAINews}
+\author{中園康聖}
+\date{2024/02/29}
+\begin{document}
+\bibliographystyle{junsrt}% 参考文献のスタイル(https://mathlandscape.com/latex-bibstyles/)
+\begin{frame}
+\titlepage
+\end{frame}
+% \frame{\tableofcontents[hideallsubsections]}
+\begin{frame}{目次}
+\tableofcontents
+\end{frame}
+\section{Cotomo}
+\begin{frame}
+\frametitle{Cotomoの登場}
+目新しい技術はないが、既存の技術を落とし込んだ\\アプリが登場した。
+\begin{itemize}
+\item \href{https://x.com/sekiun_creation/status/1761625724358926460?s=12&t=HWsH9aiIPwtM8W1pjX9WBA}{司島積雲 Shijima Sekiun (@sekiun\_creation) on X}
+\item \href{https://x.com/ksk_st/status/1761680881943822662?s=12&t=HWsH9aiIPwtM8W1pjX9WBA}{加速サトウ (@ksk\_st) on X}
+\item \href{https://x.com/ag4o4/status/1761548559642665299?s=12&t=HWsH9aiIPwtM8W1pjX9WBA}{Ag (@Ag4O4) on X}
+\end{itemize}
+\end{frame}
+
+\section{生成AI専用保険}
+\begin{frame}
+\frametitle{生成AI専用保険の登場}
+\href{https://www.aioinissaydowa.co.jp/corporate/about/news/pdf/2024/news_2024022701277.pdf}{あいおいニッセイによる生成AI専用保険}が登場した。
+主な概要は以下の３つの柱で構成されている。
+\begin{itemize}
+\item 未然防止：生成AI利用時のガバナンス体制構築支援（インプットデータを過確認、管理する体制,生成物を事前チェックしてから展開する体制）
+\item 補償：生成AI利用時の各種リスクへの補償（知的財産侵害,情報漏洩,ハルシネーション）
+\item 回復支援：事故発生後の対応支援コンサルティングの提供
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{カバーするリスク}
+\begin{itemize}
+\item 知的財産侵害：生成AIを使用し生成した製造物が知的財産権（特許権、商標権、実用新案権、意匠権、著作権）を侵害したとして、権利者から訴訟を起こされた場合
+\item 情報漏洩：生成AI使用に起因して、自社の機密情報が外部に漏洩し、そのことが新聞やテレビなどで報道された場合
+\item ハルシネーション（人格侵害権、名誉毀損、その他不適切な表現）：生成AIに伴い、口頭、文書、図画その他これらに類する表示行為による名誉毀損またはプライバシー侵害、その他不適切な表現が新聞やテレビなどで報道された場合
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{対象となる侵害}
+\begin{itemize}
+\item 調査費用（なぜ事故が起こったのか原因分析時に発生する費用）
+\item 法律相談費用
+\item 再発防止費用（コンサルティング費用など）
+\item 記者会見・社告費用
+\item 被害者への見舞金
+\end{itemize}
+\end{frame}
+
+\section{パブリックコメントへのコメント返し}
+
+\begin{frame}
+\frametitle{著作権素案に対するパブリックコメントへの\\コメント返し}
+\begin{itemize}
+\item \href{https://www.bunka.go.jp/seisaku/bunkashingikai/chosakuken/hoseido/r05_07/pdf/94011401_01.pdf}{パブリックコメントへのコメント返し}が公開された。
+\item あまり調べていないままコメントをしている人も多く、既存の法で解決可能というコメントも返されていた
+\end{itemize}
+\end{frame}
+
+\section{1BitLLM}
+\begin{frame}
+\frametitle{1BitLLMの衝撃}
+Microsoftによって、新たな論文が公開された。説明記事は\href{https://wirelesswire.jp/2024/02/86094/}{これ}。実際に動かした記事は\href{https://note.com/shi3zblog/n/n58b0a2252727}{これ}。
+\begin{itemize}
+\item 1Bitでありながら、パラメータが3Bを超えると出力性能が既存のLLaMa LLMを超えだした。
+\item この論文では新たなハードウェアへの期待感を煽るような記述が多く見られた
+\item 実際に動かした人によるとGPUはCPUより4倍速く、相変わらずGPUが勝っているが倍率は小さくなっている
+\item 事前学習時に1Bit用に調整せねばならず、既存のモデルとの互換性はない
+\end{itemize}
+\end{frame}
+
+% \begin{frame}[allowframebreaks]
+% \bibliography{sample} %参考文献ファイル名(sample.bib) 拡張子は指定しない
+% \end{frame}
+\end{document}

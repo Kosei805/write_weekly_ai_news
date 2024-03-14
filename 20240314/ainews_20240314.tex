@@ -1,0 +1,85 @@
+\documentclass[dvipdfmx,12pt]{beamer}% dvipdfmxしたい
+\usepackage{bxdpx-beamer}% dvipdfmxなので必要
+\usepackage{pxjahyper}% 日本語で'しおり'したい
+\usepackage{minijs}% min10ヤダ
+\usepackage{amsmath,amssymb,amsthm}% 数式とか
+\usepackage{graphicx}% 画像とか
+\usepackage{tikz}% 図とか
+\usepackage{ascmac}% 枠とか
+\usepackage{url}% URLとか
+\usepackage{here}% 画像とか
+\usepackage{hyperref}% ハイパーリンクとか
+\renewcommand{\kanjifamilydefault}{\gtdefault}% 既定をゴシック体に
+
+% あとは欧文の場合と同じ
+\usetheme{Copenhagen}% https://hartwork.org/beamer-theme-matrix/
+\usecolortheme{default}% https://hartwork.org/beamer-theme-matrix/
+
+\AtBeginSection[]{
+    \frame{\tableofcontents[currentsection, hideallsubsections]} %目次スライド
+}
+
+\title{今週のAINews}
+\author{中園康聖}
+\date{2024/03/14}
+\setbeamertemplate{caption}[numbered] % 図表番号をつける
+\begin{document}
+\bibliographystyle{junsrt}% 参考文献のスタイル(https://mathlandscape.com/latex-bibstyles/)
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{目次}
+\tableofcontents
+\end{frame}
+\section{Claude3}
+% \subsection{サブセクション名}
+\begin{frame}
+\frametitle{claude3の登場}
+新たにClaude3が登場した。登場したモデルは以下の3つである。
+
+\begin{itemize}
+\item Opus
+\item Sonnet
+\item Haiku
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Haiku}
+GPT3.5より安価なAPIモデル。もし、クオリティよりも低コストであることを求めるならこれがベスト。
+\end{frame}
+
+\begin{frame}
+\frametitle{Sonnet}
+
+ブラウザ版で利用できるモデル。話題にはあまり上がっていない。
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Opus}
+最も高性能なモデルで、現在最も性能の良いGPT4を上回った。
+IQが100を超えると言われている。コンテキスト長が長く、ブラウザ版でpdfを渡せるため、データを参照しやすい。
+英語性能はGPT4が強く、日本語性能はClaude3が強い。今度、日本で\href{https://jawsug-ai.connpass.com/event/313318/}{イベント}をするらしい。
+\begin{itemize}
+\item \href{https://twitter.com/sou_btc/status/1767825425269666093?s=12&t=HWsH9aiIPwtM8W1pjX9WBA}{2chスレッドの作成}
+\item \href{https://twitter.com/shi3z/status/1766765085488472306?s=12&t=HWsH9aiIPwtM8W1pjX9WBA}{アニメーションの作成}
+\item \href{https://note.com/genkaijokyo/n/n186c061b7476}{当直表を作成}
+\item \href{https://zenn.dev/olemi/articles/a8b492712fd9e7}{動画解析}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{最後に}
+ここまで、Claude3に付いて説明してきたが、そろそろGPT5が登場してまた逆転するかもしれない。
+MicrosoftのページにGPT5という記載が現れた。
+また、今日(3/14)はGPT4が登場した日。ちょうど一年目である。
+なんなら、今日新しい発表があるかも…
+\end{frame}
+
+
+% \begin{frame}[allowframebreaks]
+% \bibliography{sample} %参考文献ファイル名(sample.bib) 拡張子は指定しない
+% \end{frame}
+\end{document}
